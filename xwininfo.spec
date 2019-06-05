@@ -4,7 +4,7 @@
 #
 Name     : xwininfo
 Version  : 1.1.4
-Release  : 1
+Release  : 2
 URL      : https://www.x.org/releases/individual/app/xwininfo-1.1.4.tar.gz
 Source0  : https://www.x.org/releases/individual/app/xwininfo-1.1.4.tar.gz
 Summary  : No detailed summary available
