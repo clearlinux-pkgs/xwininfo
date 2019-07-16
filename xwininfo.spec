@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xCFDF148828C642A7 (alanc@freedesktop.org)
 #
 Name     : xwininfo
-Version  : 1.1.4
-Release  : 4
-URL      : https://www.x.org/releases/individual/app/xwininfo-1.1.4.tar.gz
-Source0  : https://www.x.org/releases/individual/app/xwininfo-1.1.4.tar.gz
-Source99 : https://www.x.org/releases/individual/app/xwininfo-1.1.4.tar.gz.sig
+Version  : 1.1.5
+Release  : 5
+URL      : https://www.x.org/releases/individual/app/xwininfo-1.1.5.tar.gz
+Source0  : https://www.x.org/releases/individual/app/xwininfo-1.1.5.tar.gz
+Source99 : https://www.x.org/releases/individual/app/xwininfo-1.1.5.tar.gz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT-Opengroup
@@ -52,14 +52,15 @@ man components for the xwininfo package.
 
 
 %prep
-%setup -q -n xwininfo-1.1.4
+%setup -q -n xwininfo-1.1.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1559748148
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563250855
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -71,14 +72,14 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1559748148
+export SOURCE_DATE_EPOCH=1563250855
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xwininfo
 cp COPYING %{buildroot}/usr/share/package-licenses/xwininfo/COPYING
