@@ -1,1 +1,3 @@
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: whether to use xcb-errors library
 Configure miss: whether to use xcb-icccm library
